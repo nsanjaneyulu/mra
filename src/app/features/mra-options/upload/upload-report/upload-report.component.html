@@ -1,0 +1,36 @@
+<div class="">
+    <div class="row">
+        <div class="col-3">
+            <p-tree [value]="files" class="tree-container"></p-tree>
+        </div>
+        <div class="col-5">
+            <div class="report-list">
+                <div class="report-table">
+                    <div class="table-header">
+                        <span class="header-name">Report Name</span>
+                        <span class="header-date">Reporting Date</span>
+                    </div>
+                    <div *ngFor="let category of reports">
+                        <div class="category-title">{{ category.category }}</div>
+                        <div *ngFor="let subcategory of category.subcategories">
+                            <div class="subcategory-title">{{ subcategory.name }}</div>
+                            <div *ngFor="let report of subcategory.reports" class="report-row">
+                                <span class="report-name">
+                                    <input type="checkbox" />
+                                    {{ report.name }}
+                                </span>
+                                <span class="report-date">{{ report.date }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <h4>Preview:</h4>
+            <div class="pdf-container">
+                <iframe src="https://pdfobject.com/pdf/sample.pdf" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

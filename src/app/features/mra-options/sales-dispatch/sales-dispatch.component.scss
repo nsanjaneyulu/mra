@@ -1,0 +1,102 @@
+/* Card Shadow Styles */
+.cardShadow {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+  
+  /* File List Styles */
+  .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* File Item Styles */
+  .file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  /* Common Text Styles */
+  .period,
+  .name,
+  .size {
+    font-size: 12px;
+    flex: 1;
+    font-weight: 700;
+  }
+  
+  /* Size Text Alignment */
+  .size {
+    text-align: right;
+  }
+  
+  /* Period Minimum Width */
+  .period {
+    min-width: 5.5rem;
+  }
+  
+  /* Name Container Styles */
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Card Title Styles */
+  .card-title {
+    font-size: 14px;
+    border-bottom: 2px solid #eae4e4;
+    font-weight: bold;
+  }
+  
+  /* Card Name Color */
+  .card-name {
+    color: blue;
+  }
+  
+  /* Card Icon Color */
+  .card-icon {
+    color: green;
+  }
+  .card-desc {
+    font-size: 14px;
+    font-weight: 600;
+    .note {
+        color: blue;
+    }
+  }
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .file-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .period,
+    .name,
+    .size {
+      flex: none;
+      width: 100%;
+    }
+  }
+  .scroller-fixed-height {
+    height: 100px; // adjust this value as needed
+    overflow-y: hidden;
+  }
+  
+  .scroller-dynamic-height {
+    max-height: 100px; // adjust this value as needed
+    overflow-y: auto;
+  }
+  ::ng-deep .p-tooltip {
+    font-size: 12px; /* Customize font size */
+  }
+  
+  ::ng-deep .p-tooltip-text {
+    font-size: 12px; /* Customize font size */
+  }

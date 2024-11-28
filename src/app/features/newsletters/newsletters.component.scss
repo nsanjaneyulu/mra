@@ -1,0 +1,73 @@
+.content {
+  font-size: 14px;
+}
+
+.content-color {
+  color: #00549F;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.image-container {
+  width: 100%;
+}
+
+.responsive-image {
+  width: 80%;
+}
+
+.box-style {
+  border: 1px solid #ddd;
+}
+
+.title {
+  border-bottom: 2px solid #ddd; 
+}
+
+.subTitle {
+  border-bottom: 1px solid #ddd; 
+}
+
+.warningMessage {
+  display: flex;
+  justify-content: space-between;
+  background: #ba0303;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  #pdfViewer canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 468px) {
+  .card-width {
+    width: 100%;
+  }
+}
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 16px;
+}
+::ng-deep .p-tooltip {
+  font-size: 12px; /* Customize font size */
+}
+
+::ng-deep .p-tooltip-text {
+  font-size: 12px; /* Customize font size */
+}
+.scroller-fixed-height {
+  height: 340px; // adjust this value as needed
+  overflow-y: hidden;
+}
+
+.scroller-dynamic-height {
+  max-height: 340px; // adjust this value as needed
+  overflow-y: auto;
+}

@@ -1,0 +1,135 @@
+<div class="warningMessage">
+  <span
+    >The following publications are to be used only within the company.
+    Distribution and/or circulation of the newsletters is strictly
+    prohibited</span
+  >
+</div>
+<div class="grid mt-2">
+  <div class="xl:col-3 md:col-3 lg:col-3 sm:col-12">
+    <div class="box-style">
+      <div class="title image-container" style="font-weight: bold">
+        <img class="responsive-image" src="../../../assets/images/platts.png" />
+      </div>
+      <div class="subTitle p-1 mb-3 content" style="font-weight: bold">
+        Platts
+      </div>
+      <ng-container *ngIf="fastmarkets && fastmarkets.length > 0; else noData">
+        <div [ngClass]="{'scroller-fixed-height': fastmarkets.length <= 10, 'scroller-dynamic-height': fastmarkets.length > 10}">
+          <p-scroller
+            [items]="fastmarkets"
+            class="p-scroller"
+            styleClass="surface-border">
+            <ng-template pTemplate="item" let-item let-options="options">
+              <div class="flex align-items-center p-2">
+                <span>
+                  <i class="pi pi-book" style="font-size: 1rem"></i>
+                </span>
+                <span class="content content-color pl-2" (click)="openPdf(item)" pTooltip="{{ item.name }}" tooltipPosition="top">{{ truncate(item.name, 20) }}</span>
+              </div>
+            </ng-template>
+          </p-scroller>
+        </div>
+      </ng-container>
+      <ng-template #noData>
+        <div class="no-data scroller-fixed-height">No Data Available</div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="xl:col-3 md:col-3 lg:col-3 sm:col-12">
+    <div class="box-style">
+      <div class="title image-container" style="font-weight: bold">
+        <img class="responsive-image" src="../../../assets/images/kallanish.png" />
+      </div>
+      <div class="subTitle p-1 mb-3 content" style="font-weight: bold">
+        Platts
+      </div>
+      <ng-container *ngIf="kallanish && kallanish.length > 0; else noData">
+        <div [ngClass]="{'scroller-fixed-height': kallanish.length <= 10, 'scroller-dynamic-height': kallanish.length > 10}">
+          <p-scroller
+            [items]="kallanish"
+            class="p-scroller"
+            styleClass="surface-border">
+            <ng-template pTemplate="item" let-item let-options="options">
+              <div class="flex align-items-center p-2">
+                <span>
+                  <i class="pi pi-book" style="font-size: 1rem"></i>
+                </span>
+                <span class="content content-color pl-2" (click)="openPdf(item)" pTooltip="{{ item.name }}" tooltipPosition="top">{{ truncate(item.name, 20) }}</span>
+              </div>
+            </ng-template>
+          </p-scroller>
+        </div>
+      </ng-container>
+      <ng-template #noData>
+        <div class="no-data scroller-fixed-height">No Data Available</div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="xl:col-3 md:col-3 lg:col-3 sm:col-12">
+    <div class="box-style">
+      <div class="title image-container" style="font-weight: bold">
+        <img class="responsive-image" src="../../../assets/images/platts.png" />
+      </div>
+      <div class="subTitle p-1 mb-3 content" style="font-weight: bold">
+        Platts
+      </div>
+      <ng-container *ngIf="fastmarkets && fastmarkets.length > 0; else noData">
+        <div [ngClass]="{'scroller-fixed-height': fastmarkets.length <= 10, 'scroller-dynamic-height': fastmarkets.length > 10}">
+          <p-scroller
+            [items]="fastmarkets"
+            class="p-scroller"
+            styleClass="surface-border">
+            <ng-template pTemplate="item" let-item let-options="options">
+              <div class="flex align-items-center p-2">
+                <span>
+                  <i class="pi pi-book" style="font-size: 1rem"></i>
+                </span>
+                <span class="content content-color pl-2" (click)="openPdf(item)" pTooltip="{{ item.name }}" tooltipPosition="top">{{ truncate(item.name, 20) }}</span>
+              </div>
+            </ng-template>
+          </p-scroller>
+        </div>
+      </ng-container>
+      <ng-template #noData>
+        <div class="no-data scroller-fixed-height">No Data Available</div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="xl:col-3 md:col-3 lg:col-3 sm:col-12">
+    <div class="box-style">
+      <div class="title image-container" style="font-weight: bold">
+        <img
+          class="responsive-image"
+          src="../../../assets/images/metalexpert.png"
+        />
+      </div>
+      <div class="subTitle p-1 mb-3 content" style="font-weight: bold">
+        Metal Expert
+      </div>
+      <ng-container *ngIf="worldSteelNewsDaily && worldSteelNewsDaily.length > 0; else noData">
+        <p-scroller
+          [items]="worldSteelNewsDaily"
+          class="p-scroller dynamic-height"
+          [itemSize]="50"
+          [style]="{ height: '340px' }"
+          styleClass="surface-border"
+        >
+          <ng-template pTemplate="item" let-item let-options="options">
+            <div class="flex align-items-center p-2">
+              <span class=""
+                ><i class="pi pi-book" style="font-size: 1rem"></i
+              ></span>
+              <span class="content content-color pl-2" (click)="openPdf(item)" pTooltip="{{ item.name }}" tooltipPosition="top">{{ truncate(item.name, 20) }}</span>
+            </div>
+          </ng-template>
+        </p-scroller>
+      </ng-container>
+      <ng-template #noData>
+        <div class="no-data">No Data Available</div>
+      </ng-template>
+    </div>
+  </div>
+</div>

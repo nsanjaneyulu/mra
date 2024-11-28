@@ -1,0 +1,44 @@
+<div class="cardShadow">
+    <esa-reusable-search-filter [fields]="fields" (search)="handleSearch($event)"></esa-reusable-search-filter>
+    </div>
+    <div class="grid mt-2">
+      <div class="col">
+        <div class="esa-custom-flex">
+          <div class="boldFont lableStyle">Showing 0 results:</div>
+          <!-- <div>
+            <esa-reusable-button
+                label="Upload PDF"
+                backgroundColor="#00549f"
+                textColor="#ffffff"
+                icon="pi pi-exclamation-circle"
+                (clickAction)="showDialog()">
+              </esa-reusable-button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <p-panel header="PDF List" class="custom-table-pannel mt-4">
+        <esa-reusable-table
+          [tableData]="filteredData"
+          [columns]="columns"
+          [showManageAccess]="showManageAccess"
+          (reportAccessView)="onRowSelected($event)"
+          [rows]="pageSize"
+          [rowsPerPageOptions]="rowsPerPageOptions">
+        </esa-reusable-table>
+      </p-panel>
+      <p-dialog header="Manage Access" [modal]="true" [(visible)]="visible" class="dialogWidth" [style]="{ width: '25rem' }">
+        <p-tree [value]="sampleselectedReportAccessData" selectionMode="checkbox" [(selection)]="selectedReportAccess" [propagateSelectionUp]="true" [propagateSelectionDown]="true">
+        </p-tree>
+        <div>
+          <esa-reusable-button
+              label="Save"
+              backgroundColor="#00549f"
+              textColor="#ffffff"
+              (clickAction)="saveManageAccess()">
+            </esa-reusable-button>
+        </div>
+      </p-dialog>
+
+
+      

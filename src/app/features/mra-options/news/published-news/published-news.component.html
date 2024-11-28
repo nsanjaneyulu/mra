@@ -1,0 +1,22 @@
+<div class="cardShadow">
+    <esa-reusable-search-filter [fields]="fields" (search)="handleSearch($event)"></esa-reusable-search-filter>
+    </div>
+    <div class="grid mt-2">
+      <div class="col">
+        <div class="esa-custom-flex">
+          <div class="boldFont lableStyle">Showing 0 results:</div>
+        </div>
+      </div>
+    </div>
+    <div class="cardShadow mt-3">
+        <div class="content-section implementation">
+          <esa-reusable-table-collapse 
+            [tableData]="filteredData" 
+            [columns]="columns" 
+            [showAction]="showAction"
+            [showActionButton]="showActionButton"
+            (rowSelected)="onRowSelected($event)" 
+            (actionClicked)="onEditPublishClick($event)">
+          </esa-reusable-table-collapse>
+        </div>
+      </div>

@@ -1,0 +1,208 @@
+$animationSpeed: 30s;
+.updatelist{
+    width: 100%;
+    width: 100%;
+    background: #002776;
+   
+    .btn-primary{
+        background-color: #002776;
+        color: #fff;
+        
+    }
+    .mraupdates{
+        background: #D1E4FF;
+        padding: 0;
+        //padding: 0.5rem;
+        overflow: hidden;
+        ul{
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            display: inline-flex;
+            li{
+                border-right: 1px solid #000000;
+                padding:0 1.5rem;
+               line-height: 18px; 
+                
+            }
+        }
+    }
+}
+.list {
+    cursor: pointer !important;
+}
+.card-wraper{
+    margin-top: 1.5rem;
+}
+.custom-card{
+    .p-card{
+        min-height: 90px;
+        height: auto;
+        border-radius: 10px;
+        padding: 0.5rem ;
+        .p-card-title{
+            font-size: 18px;
+            color: #343434;
+        }
+        .p-card-body{
+            padding: 0;
+        }
+        .p-card-content{
+            padding: 0;
+            h3{
+                font-size: 1rem;
+                font-weight: 700;
+                max-width: 20ch;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            h4{
+                label{
+                    font-size: 0.85rem;
+                }
+                span{
+                    font-size: 0.75rem;
+                    color: #8F8F8F;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            p{
+                font-size: 11px;
+                span{
+                    display: inline;
+                    border-left: 1px solid #D1E4FF;
+                   // padding-left: 0.250rem;
+                    margin-left: 0.250rem;
+                }
+            }
+        }
+        h3, h4, p{
+            margin: 0;
+        }
+    }
+}
+
+
+
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
+}
+
+
+// Styling
+.slider {
+	margin: auto;
+    background: #D1E4FF;
+    padding: 0.5rem;
+	&::before,
+	&::after {
+		//@include white-gradient;
+		content: "";
+		//height: 100px;
+		//position: absolute;
+		//width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(300px * 14);
+       .slide{
+            border-right: 1px solid #000000;
+            padding:0 1.5rem;
+           //line-height: 18px; 
+        }
+	}	
+}
+
+.decreament{
+    color: #DC3545;
+}
+.increament{
+    color: #28A745;
+}
+.constrant{
+    color: #009FDA;
+}
+
+.trickertable{
+    font-size: 0.85rem !important;
+    .p-datatable-thead > tr > th {
+        color: #fff;
+        background-color: #002776;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem !important;
+        white-space: nowrap;
+    }
+    .p-datatable-tbody > tr > td {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+.custom-grid{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(7, 1fr);
+    @media screen and (max-width:576px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width:768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.pdf-data{
+    ul{
+        h3{
+            font-size: 16px;
+        }
+        li{
+            font-size: 14px;
+        }
+    }
+}
+ul.p-tabview-nav{
+    gap: 1rem;
+    padding: 0.5rem;
+}
+.p-tabview-nav-link{
+   padding: 0.5rem 1.24rem; 
+   border-radius: 6px;
+}
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+    background-color: #002776;
+    color: #F2F6FA;
+}
+.p-tabview .p-tabview-nav li:not(.p-highlight) .p-tabview-nav-link{
+    border: 1px solid #002776;
+   // color: #F2F6FA;
+}
+@media (max-width: 768px) {
+    .pdf-data ul li {
+        font-size: 12px;
+    }
+}
+  
+
+
+
+

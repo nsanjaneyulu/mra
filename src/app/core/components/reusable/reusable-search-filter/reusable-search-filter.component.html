@@ -1,0 +1,35 @@
+<div class="cardShadow">
+<div class="filter-container">
+    <div class="filter-header">
+      <span>Filter By:</span>
+      <span (click)="clearFilters()" class="clearFilterTitle">Clear Filters</span>
+    </div>
+    <div class="filter-fields">
+      <ng-container *ngFor="let field of fields">
+        <div class="filter-field" *ngIf="field.type === 'input'">
+          <label [for]="field.name" class="regularFont">{{ field.label }}</label>
+          <input pInputText type="text" [id]="field.name" [(ngModel)]="filters[field.name]" [placeholder]="field.placeholder">
+        </div>
+        <div class="filter-field" *ngIf="field.type === 'dropdown'">
+          <label [for]="field.name" class="regularFont">{{ field.label }}</label>
+          <p-dropdown [options]="field.options" [(ngModel)]="filters[field.name]" [placeholder]="field.placeholder"></p-dropdown>
+        </div>
+        <div class="filter-field" *ngIf="field.type === 'calendar'">
+          <label [for]="field.name" class="regularFont">{{ field.label }}</label>
+          <p-calendar [(ngModel)]="filters[field.name]" inputId="icondisplay" [placeholder]="field.placeholder" [iconDisplay]="'input'" [showIcon]="true"
+                [maxDate]="today"
+                [minDate]="field.name === 'toDate' ? filters['fromDate'] : null"
+                [maxDate]="field.name === 'fromDate' && filters['toDate'] ? filters['toDate'] : today"></p-calendar>
+        </div>
+      </ng-container>
+      <div class="filter-field" style="margin-top: 40px;">
+        <esa-reusable-button
+            label="Search"
+            backgroundColor="#00549f"
+            textColor="#ffffff"
+            (clickAction)="onSearch()">
+          </esa-reusable-button>
+      </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,129 @@
+<div class="col-12 card-desc">
+  <span class="note">Note:</span
+  ><span class="desc">
+    Files in above panel contains the whole sales booking and sales dispatch
+    data</span
+  >
+</div>
+<div class="cardShadow">
+  <div class="card-title col-12">Sales & dispatch data</div>
+  <div class="grid col-12">
+    <div class="col-5">
+      <div
+        class="file-list"
+        [ngClass]="{
+          'scroller-fixed-height': dsalesDispatchData.length <= 4,
+          'scroller-dynamic-height': dsalesDispatchData.length > 4
+        }"
+      >
+        <div
+          class="file-item"
+          *ngFor="let salesDispatchDataGet of dsalesDispatchData"
+        >
+          <span class="period">{{ salesDispatchDataGet.period }}</span>
+          <span class="name"
+            ><i class="pi pi-file-excel card-icon"></i>
+            <span class="card-name" pTooltip="{{ salesDispatchDataGet.fileName }}" tooltipPosition="top">{{ truncate(salesDispatchDataGet.fileName, 20) }}</span>
+        </span>
+          <span class="size">{{ salesDispatchDataGet.size }}</span>
+        </div>
+        <div class="file-item" *ngIf="dsalesDispatchData.length == 0">
+          <div class="name">
+            <span class="">No Data available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-12 card-desc mt-4">
+  <span class="note">Note:</span
+  ><span class="desc">
+    Files in below panel we distributed the data on the bases of product type
+    and year wise and each file contain max 3 years sale and dispatch
+    data.</span
+  >
+</div>
+<div class="grid">
+  <div class="col-4">
+    <div class="col-12 cardShadow">
+      <div class="card-title">Rebar, Rebar Coil, Wire Rod, Billet & DRI</div>
+      <div
+        class="file-list pt-2"
+        [ngClass]="{
+          'scroller-fixed-height': rebar.length <= 4,
+          'scroller-dynamic-height': rebar.length > 4
+        }"
+      >
+        <div class="file-item" *ngFor="let salesDispatchDataGet of rebar">
+          <span class="period">{{ salesDispatchDataGet.period }}</span>
+          <span class="name">
+            <i class="pi pi-file-excel card-icon"></i>
+            <span class="card-name" pTooltip="{{ salesDispatchDataGet.fileName }}" tooltipPosition="top">{{ truncate(salesDispatchDataGet.fileName, 20) }}</span>
+          </span>
+          <span class="size">{{ salesDispatchDataGet.size }}</span>
+        </div>
+        <div class="file-item" *ngIf="rebar.length == 0">
+          <div class="name">
+            <span class="">No Data available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="col-12 cardShadow">
+      <div class="card-title">Section & Sheet Piles</div>
+      <div
+        class="file-list pt-2"
+        [ngClass]="{
+          'scroller-fixed-height': sectionSheet.length <= 4,
+          'scroller-dynamic-height': sectionSheet.length > 4
+        }"
+      >
+        <div
+          class="file-item"
+          *ngFor="let salesDispatchDataGet of sectionSheet"
+        >
+          <span class="period">{{ salesDispatchDataGet.period }}</span>
+          <span class="name">
+            <i class="pi pi-file-excel card-icon"></i>
+            <span class="card-name">{{ salesDispatchDataGet.fileName }}</span>
+          </span>
+          <span class="size">{{ salesDispatchDataGet.size }}</span>
+        </div>
+        <div class="file-item" *ngIf="sectionSheet.length == 0">
+          <div class="name">
+            <span class="">No Data available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="col-12 cardShadow">
+      <div class="card-title">Scrap & Other</div>
+      <div
+        class="file-list pt-2"
+        [ngClass]="{
+          'scroller-fixed-height': scrapOther.length <= 4,
+          'scroller-dynamic-height': scrapOther.length > 4
+        }"
+      >
+        <div class="file-item" *ngFor="let salesDispatchDataGet of scrapOther">
+          <span class="period">{{ salesDispatchDataGet.period }}</span>
+          <span class="name">
+            <i class="pi pi-file-excel card-icon"></i>
+            <span class="card-name" pTooltip="{{ salesDispatchDataGet.fileName }}" tooltipPosition="top">{{ truncate(salesDispatchDataGet.fileName, 20) }}</span>
+          </span>
+          <span class="size">{{ salesDispatchDataGet.size }}</span>
+        </div>
+        <div class="file-item" *ngIf="scrapOther.length == 0">
+          <div class="name">
+            <span class="">No Data available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

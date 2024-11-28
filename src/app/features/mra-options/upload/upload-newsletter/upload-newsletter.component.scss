@@ -1,0 +1,128 @@
+.cardShadow {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1215686275) !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 12px;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.clearFilter {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.p-button {
+    padding: 10px !important;
+    font-size: 12px !important;
+
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+    width: 100%;
+    // padding: 8px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="file"] {
+    display: none;
+}
+
+.form-group .file-label {
+    text-align: center;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.form-group .file-label:hover {
+    background-color: #f0f0f0;
+}
+
+.form-group .file-label svg {
+    margin-right: 10px;
+}
+
+.form-group .file-label span {
+    color: #888;
+}
+
+.form-group .file-chosen {
+    margin-top: 10px;
+    color: #666;
+}
+
+.btn-upload {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-upload:hover {
+    background-color: #0056b3;
+}
+
+.btn-align {
+    display: flex;
+    justify-content: right;
+}
+.errorField {
+    color: #f00;
+    font-size: 11px;
+}
+.dragDrop {
+    font-size: 12px;
+}
+.supportPDF {
+    font-size: 10px;
+    color: #888;
+}
+.filedTitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+.esa-custom-flex {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 468px) {
+    .lableStyle {
+      display: block;
+    }
+  }
+  /* pdf-list.component.css */
+.p-datatable .p-datatable-thead > tr > th,
+.p-datatable .p-datatable-tbody > tr > td {
+  text-align: left;
+}
+.dragDrop {
+  display: inline-block;
+  margin-left: 5px;
+  color: #007ad9;
+}
+.supportPDF {
+  font-size: 12px;
+  color: #7a7a7a;
+}
+.filedTitle {
+  font-weight: bold;
+}
+.errorField {
+  color: red;
+  font-size: 12px;
+}

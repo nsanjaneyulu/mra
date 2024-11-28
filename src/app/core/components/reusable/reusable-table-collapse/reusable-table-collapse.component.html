@@ -1,0 +1,54 @@
+<p-table [value]="tableData" [selectionMode]="selectionMode" [(selection)]="selectedRow" [rows]="rows" [rowsPerPageOptions]="rowsPerPageOptions">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Details</th>
+        <th style="font-size: 12px;" *ngFor="let col of columns" pSortableColumn="{{col.field}}">
+          {{ col.header }} <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th *ngIf="showAction">Action</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th *ngFor="let col of columns">
+          <input pInputText type="text" placeholder="Search" (input)="onSearch($event, col.field)" />
+        </th>
+        <th *ngIf="showAction"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+      <tr [pSelectableRow]="row">
+        <td>
+          <i class="pi" [ngClass]="{'pi-plus': selectedRow !== row, 'pi-minus': selectedRow === row}" 
+            (click)="toggleRow(row)"></i>
+        </td>
+        <td style="font-size: 12px;" *ngFor="let col of columns">{{ row[col.field] }}</td>
+        <td *ngIf="showAction">
+          <esa-reusable-button *ngIf="showActionButton" label="Edit & Publish" backgroundColor="#00549f" textColor="#ffffff"
+            (clickAction)="onActionClick(row)">
+          </esa-reusable-button>
+          <esa-reusable-button *ngIf="showActionUpdate" label="Update" backgroundColor="#00549f" textColor="#ffffff"
+            (clickAction)="onActionClick(row)">
+          </esa-reusable-button>
+        </td>
+      </tr>
+      <tr *ngIf="selectedRow === row">
+        <td colspan="9">
+          <div class="container">
+            <div class="form-group">
+              <label for="headline" class="form-label">Headline</label>
+              <div class="form-control">
+                <p>{{ selectedRow.shortHeadline }}</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="body" class="form-label">Body</label>
+              <div class="form-control">
+                <p>{{ selectedRow.shortDescline }}</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  

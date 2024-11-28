@@ -1,0 +1,78 @@
+<div class="cardShadow">
+    <esa-reusable-search-filter [fields]="fields" (search)="handleSearch($event)"></esa-reusable-search-filter>
+    </div>
+    <div class="grid mt-2">
+      <div class="col">
+        <div class="esa-custom-flex">
+          <div class="boldFont lableStyle">Showing {{filteredData?.length}} results:</div>
+          <div>
+            <esa-reusable-button
+                label="Newsletter"
+                backgroundColor="#00549f"
+                textColor="#ffffff"
+                icon="pi pi-plus-circle"
+                (clickAction)="showDialog()">
+              </esa-reusable-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p-panel header="Newsletter List" class="custom-table-pannel mt-4">
+        <esa-reusable-table
+          [tableData]="filteredData"
+          [columns]="columns"
+          [showAction]="showAction"
+          [rows]="pageSize"
+          (uploadNewsletterView)="onRowSelected($event)" 
+          [showActionDelete]="showActionDelete"
+          [rowsPerPageOptions]="rowsPerPageOptions">
+        </esa-reusable-table>
+      </p-panel>
+      <p-dialog header="Upload Newsletter" [modal]="true" [(visible)]="visible">
+        <form [formGroup]="uploadForm" (ngSubmit)="uploadFileConfirm()">
+          <div class="flex flex-column gap-2">
+            <div class="filter-field">
+              <label class="regularFont">Source</label>
+              <p-dropdown [options]="sourceOptions" placeholder="Source" formControlName="sourceName"></p-dropdown>
+            </div>
+            <div *ngIf="uploadForm.get('sourceName').invalid && uploadForm.get('sourceName').touched" class="errorField">
+              Source is required.
+            </div>
+          </div>
+          <div class="flex flex-column gap-2">
+            <label for="date" class="filedTitle">Date</label>
+            <p-calendar formControlName="date" placeholder="DD/MM/YY" [iconDisplay]="'input'" [showIcon]="true" utc="false"
+              hourFormat="12" dateFormat="dd/mm/yy"></p-calendar>
+            <div *ngIf="uploadForm.get('date').invalid && uploadForm.get('date').touched" class="errorField">
+              Date is required.
+            </div>
+          </div>
+          <div class="flex flex-column gap-2">
+            <label for="nameOfNewsletter" class="filedTitle">Name of Newsletter</label>
+            <input pInputText id="nameOfNewsletter" placeholder="Name of Newsletter" formControlName="nameOfNewsletter"
+              aria-describedby="nameOfNewsletter-help" />
+            <div *ngIf="uploadForm.get('nameOfNewsletter').invalid && uploadForm.get('nameOfNewsletter').touched" class="errorField">
+              Name of PDF is required.
+            </div>
+          </div>
+          <div class="form-group mt-2" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+            <input #fileInput type="file" id="file" (change)="onFileChange($event)" accept="application/pdf" style="display: none;">
+            <label for="file" class="file-label" [class.dragover]="dragOver" style="display: block;">
+              <div><img src="../../../assets/images/Upload icon.svg" /></div>
+              <div class="dragDrop">Drag & drop files or Browse</div>
+              <div class="supportPDF">Supported Format: PDF, should be under 10MB</div>
+            </label>
+            <div class="file-chosen filedTitle">{{ selectedFileName }}</div>
+            <div *ngIf="fileValid" class="errorField">
+              Only pdf file and size less then 10 MB supported!
+            </div>
+          </div>
+          
+          <div class="form-group btn-align col-12">
+            <button pButton pRipple class="esa-button-submit custom-button text-base" type="submit"
+              [disabled]="uploadForm.invalid" label="Upload">
+              <i class="pi pi-chevron-circle-right mr-1"></i>
+            </button>
+          </div>
+        </form>
+      </p-dialog>

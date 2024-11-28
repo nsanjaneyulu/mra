@@ -1,0 +1,320 @@
+$text-color: #ffffff;
+$primaryTextColor: #2e3f83;
+$text-secondary-color: #6c757d;
+$primaryColor: #00549f;
+$secondaryColor: #ffffff;
+$font-family: $regularFont, sans-serif;
+$buttonBg: $primaryColor;
+$buttonTextColor: $primaryTextColor;
+$borderColor: #dee2e6;
+
+/* Common styling for all devices */
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: dimgray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightslategrey;
+}
+
+/* Apply styling only for desktop devices */
+@media only screen and (min-width: 992px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+}
+
+.w-2point5rem {
+  width: 2.5rem;
+}
+
+.h-2point5rem {
+  height: 2.5rem;
+}
+
+.esa-button-submit {
+  background-color: #00549f;
+  color: #fff;
+  font-size: 18px;
+  height: 35px;
+  font-family: $lightFont, sans-serif;
+}
+
+.esa-button-cancel {
+  background-color: white;
+  color: #00549f;
+  border-color: #00549f;
+  font-size: 18px;
+  height: 43px;
+  font-family: $lightFont, sans-serif;
+  margin-left: 5%;
+}
+
+.esa-form-dropdown {
+  min-height: 43px;
+  font-size: 12px;
+  border-radius: 5px;
+  border-width: thin;
+  font-weight: 400;
+  color: black;
+
+  .p-dropdown-label {
+    text-wrap: wrap !important;
+    text-align: center;
+    display: flex;
+  }
+}
+
+.esa-form-field {
+  height: 43px;
+  font-size: 12px;
+  border-radius: 5px;
+  border-width: thin;
+  font-weight: 400;
+}
+
+.p-dropdown {
+  height: 35px !important;
+}
+
+.p-calendar {
+  height: 43px !important;
+}
+
+.p-panel-header {
+  background-color: white;
+  border-bottom: 1px solid #abb5be;
+}
+
+.p-panel {
+  box-shadow: 0px 4px 10px 0px #0000001f !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  border-bottom: solid 1px #d8d8d8;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2d3748;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  color: #3274a3;
+  border-color: #58a1c2;
+}
+
+.p-datepicker {
+  zoom: 0.72 !important;
+  left: -8.35px !important;
+  top: 0 !important;
+}
+
+thead {
+  border-bottom: solid 2px #58a1c2;
+  z-index: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .esa-button-submit {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .p-blockui-document.p-component-overlay {
+    z-index: 0 !important;
+  }
+
+  .p-dynamic-dialog {
+    width: 85vw !important;
+    overflow-x: scroll !important;
+
+    .p-dialog-content {
+      margin-top: 0px !important;
+      padding: 12px !important;
+    }
+  }
+
+  .header-cont {
+    font-size: 10px !important;
+  }
+
+  .cert_span {
+    margin-left: 10px !important;
+  }
+
+  .p-dialog-content {
+    margin-top: -2px !important;
+  }
+
+  .p-dialog-footer {
+    margin-top: -2px !important;
+  }
+
+  .p-dialog {
+    margin-left: 5rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .p-paginator {
+    zoom: 0.7 !important;
+  }
+
+  .esa-form-dropdown {
+    .p-dropdown-label {
+      font-size: 10px;
+    }
+  }
+
+  .esa-button-cancel {
+    margin-left: 0px;
+    min-width: 5rem;
+  }
+
+  .p-dropdown-label {
+    text-wrap: wrap !important;
+    font-size: 11px;
+    padding-right: 0px;
+  }
+
+  .p-dropdown-item {
+    text-wrap: wrap !important;
+    font-size: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .p-button-label {
+    font-size: 12px;
+  }
+
+  .p-tabview-nav-btn {
+    width: 1rem !important;
+  }
+
+  .right-container {
+    z-index: 0;
+  }
+
+  .layout-mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background-color: var(--maskbg);
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .p-dropdown-item {
+    text-wrap: wrap !important;
+    font-size: 8px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .p-dialog-content {
+    margin-top: -2px !important;
+  }
+
+  .p-dialog-footer {
+    margin-top: -2px !important;
+  }
+
+  .right-container {
+    z-index: 0;
+  }
+}
+
+.p-tabview-nav-btn {
+  width: 1rem !important;
+}
+
+.p-calendar-w-btn .p-datepicker-trigger {
+  background-color: #00549f;
+}
+
+.p-blockui-document.p-component-overlay {
+  z-index: 0 !important;
+}
+
+.p-inputtext:disabled {
+  color: black;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1023px) and (orientation: Landscape) {
+  .p-datepicker {
+    zoom: 0.5 !important;
+    left: -8.35px !important;
+  }
+
+  .p-blockui-document.p-component-overlay {
+    z-index: 0 !important;
+  }
+}
+
+.custom-card {
+  .p-card {
+    border: 1px solid $borderColor;
+    box-shadow: #000;
+    min-height: 350px;
+    box-shadow: 0px 4px 10px 0px #0000001f;
+    .p-card-title {
+      font-size: 1.5rem;
+      color: $primaryColor;
+    }
+    ul {
+      margin: 0;
+    }
+  }
+}
+.custom-pannel {
+  .p-panel-header {
+    border-bottom: 1px solid #abb5be;
+  }
+}
+.p-tabview-nav-content {
+  border-radius: 10px;
+}
+.p-custom-tabcard {
+  .p-tabview {
+    border: 1px solid $borderColor !important;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1215686275);
+    border-radius: 10px;
+  }
+}
+
+.p-tabview-nav-link {
+  white-space: nowrap;
+}
+.liststyle-none{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list{
+  line-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  .date{
+    color: #54595E ;
+    margin-right: .5rem;
+  }
+  .label{
+    color: #00549F;
+  }
+}

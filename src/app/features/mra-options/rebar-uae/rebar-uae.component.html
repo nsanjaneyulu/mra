@@ -1,0 +1,10 @@
+<div class="grid">
+    <div *ngFor="let card of cards" class="col-4 min-w-min md:min-w-max mouseCursor">
+      <esa-reusable-card
+        [title]="card.title"
+        [subTitle]="card.subTitle"
+        [showSubTitle]="showSubTitle"
+        (cardClick)="onCardClick(card)">
+      </esa-reusable-card>
+      </div>
+    </div>

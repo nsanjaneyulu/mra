@@ -1,0 +1,218 @@
+<div class="flex updatelist align-items-center">
+    <div class="col-fixed btn-primary">MRA Updates</div>
+    <div class="mraupdates">
+        <div class="slider">
+            <div class="slide-track">
+                @for (item of mranewsUpdate; track $index) {
+                <div class="slide ">
+                    <label class="boldFont" for="">{{item.title}}</label>
+                </div>
+            }
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="card-wraper mt-4">
+    <div class="grid">
+        @for (item of trikerList; track $index) {
+            <div class=" col-12 sm:col-4 md:col-4 lg:col" >
+                <p-card class="custom-card"  >
+                    <h3 class="boldFont" [pTooltip]="item.title">{{item.title}}</h3>
+                     <h4> <label class="price" for="price">{{item.price | currency:'USD'}}</label><span class="date"> {{item.date  }}</span></h4>
+                    <p>change ($) -1-6 <span class="decreament boldFont "><i class="esa-icon esa-icon-16 esa-icon-downarrow-red"></i>  -0.08%</span></p>
+                </p-card>
+               </div>
+        }
+    </div>
+</div>  
+
+
+<p-tabView class="p-custom-tabcard m-4"  [scrollable]="true">
+    @for (tab of trikerTabs; track $index) {
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <span>{{tab.title}}</span>
+            </ng-template>
+            <div class="grid">
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    <p-table class="trickertable " styleClass="p-datatable-sm"  [value]="trickerData" >
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th></th>
+                                <th>Value</th>
+                                <th>Cur</th>
+                                <th>Date</th>
+                                <th>% Cha</th>
+                                
+                                <th>Frq</th>
+                                <th>Src</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-data>
+                            <tr>
+                                <td>{{ data.name }}</td>
+                                <td>{{ data.value }}</td>
+                                <td>{{ data.curency }}</td>
+                                <td>{{ data.date }}</td>
+                                <td>{{ data.Change }}</td>
+                                <td>{{ data.frequency }}</td>
+                                <td>{{ data.source }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    <div style="text-align:center">
+                        <apx-chart
+                            [series]="chartOptions.series"
+                            [chart]="chartOptions.chart"
+                            [xaxis]="chartOptions.xaxis"
+                            [title]="chartOptions.title"
+                        ></apx-chart>
+                      </div>
+                </div>
+            </div>
+        </p-tabPanel>
+    }
+    
+</p-tabView>
+
+<div class="grid">
+    <div class="col-12 sm:col-12 md:col-4 lg:col-4">
+        <p-panel header="Latest Newsletters" class="pdf-data">
+           <div>
+            <ul class="liststyle-none" *ngIf="fastmarkets.length > 0">
+                <h3 class="mb-4 mt-4">Fastmarkets Steel News Daily</h3>
+                @for (item of fastmarkets; track $index) {
+                    <li class="list boldFont" (click)="openPdf(item)">
+                        <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                        <label for="" class="date regularFont">{{item.fileModifiedOn | date: 'dd-MMM'}}</label> <label for="" class="label regularFont">{{item.name}}</label>
+                     </li>
+                }
+            </ul>
+           </div>
+
+           <div>
+            
+            <ul class="liststyle-none" *ngIf="kallanish.length > 0">
+                <h3 class="mb-4 mt-4">Kallanish Steel News Daily</h3>
+                @for (item of kallanish; track $index) {
+                    <li class="list boldFont" (click)="openPdf(item)">
+                        <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                        <label for="" class="date regularFont">{{item.fileModifiedOn | date: 'dd-MMM'}}</label> <label for="" class="label regularFont">{{item.name}}</label>
+                     </li>
+                }
+            </ul>
+           </div>
+
+           <div>
+            
+            <ul class="liststyle-none" *ngIf="worldSteelNewsDaily.length > 0">
+                <h3 class="mb-4 mt-4">World Steel News Daily</h3>
+                @for (item of worldSteelNewsDaily; track $index) {
+                    <li class="list boldFont" (click)="openPdf(item)">
+                        <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                        <label for="" class="date regularFont">{{item.fileModifiedOn | date: 'dd-MMM'}}</label> <label for="" class="label regularFont">{{item.name}}</label>
+                     </li>
+                }
+            </ul>
+           </div>
+
+             
+        </p-panel>
+    </div>
+    <div class="col-12 sm:col-12 md:col-8 lg:col-8">
+        <p-panel class="pdf-data" header="Reports for you">
+            <div class="grid">
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    
+                    <ul class="liststyle-none">
+                        <h3 class="mb-4 mt-4">Product Management</h3>
+                        @for (item of newsletters; track $index) {
+                            <li class="list boldFont" (click)="openReportsPdf()">
+                                <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                                <label for="" class="date regularFont">{{item.date}}</label> <label for="" class="label regularFont">{{item.title}}</label>
+                             </li>
+                        }
+                    </ul>
+                        
+                </div>
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    
+                    <ul class="liststyle-none">
+                        <h3 class="mb-4 mt-4">Steel & Raw Materials</h3>
+                        @for (item of newsletters; track $index) {
+                            <li class="list boldFont" (click)="openReportsPdf()">
+                                <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                                <label for="" class="date regularFont">{{item.date}}</label> <label for="" class="label regularFont">{{item.title}}</label>
+                             </li>
+                        }
+                    </ul>
+                        
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    
+                    <ul class="liststyle-none">
+                        <h3 class="mb-4 mt-4">Global Economy & Steel Demand</h3>
+                        @for (item of newsletters; track $index) {
+                            <li class="list boldFont" (click)="openReportsPdf()">
+                                <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                                <label for="" class="date regularFont">{{item.date}}</label> <label for="" class="label regularFont">{{item.title}}</label>
+                             </li>
+                        }
+                    </ul>
+                        
+                </div>
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    
+                    <ul class="liststyle-none">
+                        <h3 class="mb-4 mt-4">Competitor Watch</h3>
+                        @for (item of newsletters; track $index) {
+                            <li class="list boldFont" (click)="openReportsPdf()">
+                                <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                                <label for="" class="date regularFont">{{item.date}}</label> <label for="" class="label regularFont">{{item.title}}</label>
+                             </li>
+                        }
+                    </ul>
+                        
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    
+                    <ul class="liststyle-none">
+                        <h3 class="mb-4 mt-4">Business Development</h3>
+                        @for (item of newsletters; track $index) {
+                            <li class="list boldFont" (click)="openReportsPdf()">
+                                <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                                <label for="" class="date regularFont">{{item.date}}</label> <label for="" class="label regularFont">{{item.title}}</label>
+                             </li>
+                        }
+                    </ul>
+                        
+                </div>
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                    
+                    <ul class="liststyle-none">
+                        <h3 class="mb-4 mt-4">Hot Topics</h3>
+                        @for (item of newsletters; track $index) {
+                            <li class="list boldFont" (click)="openReportsPdf()">
+                                <i [class]="item.icon" [ngClass]="item.isToday ? 'esa-icon-bullet-orange':'' "></i>
+                                <label for="" class="date regularFont">{{item.date}}</label> <label for="" class="label regularFont">{{item.title}}</label>
+                             </li>
+                        }
+                    </ul>
+                        
+                </div>
+            </div>
+
+            
+        </p-panel>
+    </div>
+</div>

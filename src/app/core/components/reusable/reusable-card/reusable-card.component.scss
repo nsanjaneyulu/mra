@@ -1,0 +1,49 @@
+.mouseCursor {
+    cursor: pointer;
+  }
+  
+  .title-color {
+    color: #000;
+  }
+  
+  .tile {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .subTitle {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .arrow-margin {
+    margin-top: 1rem;
+  }
+  .card-desc {
+    display: flex;
+    justify-content: space-between;
+  }
+  .title-color {
+    color: #00549f;
+    font-weight: 700;
+}
+.subTitle {
+    font-size: 14px;
+}
+.arrow-margin {
+    margin-top: 10px;
+    color: #00549f;
+}
+:host ::ng-deep .p-card {
+  box-shadow: 0px 4px 10px 4px #0000001F;
+  border-radius: 12px;
+  border: thin;
+  z-index: -100010;
+  &.hover {
+      z-index: 99999;
+      box-shadow: 0px 4px 10px 4px #d60303df;
+  }
+}
+:host ::ng-deep .p-card .p-card-content {
+  padding: 0 0 !important;
+}

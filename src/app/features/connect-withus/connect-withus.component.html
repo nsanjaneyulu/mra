@@ -1,0 +1,20 @@
+<p-panel header="Connect with Us" class="custom-pannel">
+    <div class="grid ">
+        <div class="col-3" *ngFor="let contact of contactList">
+            <p-card [header]="contact.cardheader" class="custom-card" >
+               <div>
+                <i  class="esa-icon-70" [ngClass]=" contact.cardicon"></i>
+               </div>
+               
+               <ul>
+                <li><a><div class="icon"></div><label for="">{{contact.user}}</label></a> </li>
+                <li *ngFor="let userdata of contact.phone"><a><div class="icon"></div><label for="">{{userdata.mobile}}</label></a> </li>
+                <li><a><div class="icon"></div><label for="">{{contact.email}}</label></a> </li>
+               </ul>
+               
+            </p-card>
+        </div>
+       
+       
+    </div>
+</p-panel>

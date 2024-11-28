@@ -1,0 +1,43 @@
+<p-table #dt [value]="tableData" [paginator]="true" [rows]="rows" [sortMode]="'multiple'"
+  [rowsPerPageOptions]="rowsPerPageOptions">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of columns" pSortableColumn="{{col.field}}">
+        {{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+      <th *ngIf="showAction || uploadSalesDashboardView">Action</th>
+    </tr>
+    <tr>
+      <th *ngFor="let col of columns">
+        <input pInputText type="text" (input)="filterTable($event, col.field, dt)" placeholder="Search" />
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData>
+    <tr>
+      <td *ngFor="let col of columns">
+        {{ rowData[col.field] }}
+      </td>
+      <td style="display: flex;">
+        <esa-reusable-button *ngIf="showManageAccess" label="Manage Access" backgroundColor="#00549f" textColor="#ffffff"
+          (click)="onActionClick(rowData, 'manageAccess')" style="margin-right: 5px;">
+        </esa-reusable-button>
+        <esa-reusable-button *ngIf="showAction" label="View" backgroundColor="#00549f" textColor="#ffffff"
+          (click)="onActionClick(rowData, 'view')" style="margin-right: 5px;">
+        </esa-reusable-button>
+        <esa-reusable-button *ngIf="uploadSalesDashboardView" label="View" backgroundColor="#00549f" textColor="#ffffff"
+          (click)="uploadSalesDashboardClick(rowData)" style="margin-right: 5px;">
+        </esa-reusable-button>
+        <esa-reusable-button label="Delete" *ngIf="showActionDelete" backgroundColor="#d60505" textColor="#ffffff"
+          (click)="onActionClick(rowData, 'delete')">
+        </esa-reusable-button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan=columnsLength class="text-center">No Data Available</td>
+    </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/themes/skins/default/theme-default.scss";
+@import "primeicons/primeicons.css";
+@import "../node_modules/quill/dist/quill.core.css";
+@import "../node_modules/quill/dist/quill.snow.css";
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+html,
+body,
+.app-root {
+  display: block;
+  //position: relative;
+  width: 100vw !important;
+  height: 100vh !important;
+  font-size: 16px !important;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  overflow-y: hidden;
+  font-family: $regularFont;
+  font-family: 'Frutiger LT Arabic', sans-serif;
+  @media screen  and (max-width:576px) {
+    font-size: 12px;
+  }
+}
+.p-confirm-dialog-message {
+  margin-left: 5px !important;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  .p-scrolltop {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .p-scrolltop .p-scrolltop-icon {
+    font-size: 1rem;
+    color: #f9fafb;
+}
+  }
+
+  .p-column-filter-menu-button {
+    display: none;
+}
+.p-inputtext { 
+  padding: 5px !important;
+  font-size: 0.8rem !important;
+  width: 100%;
+  height: 35px;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+  font-weight: 700;
+  font-size: 1rem !important;
+}
+.p-calendar {
+  width: 100%;
+}
+.p-datepicker-icon {
+  margin-top: -10px;
+}
+.p-dropdown {
+  width: 100%;
+}

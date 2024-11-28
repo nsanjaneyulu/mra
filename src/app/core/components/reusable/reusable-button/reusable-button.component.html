@@ -1,0 +1,9 @@
+<button pButton pRipple
+        [ngClass]="{'p-button-outlined': outlined}"
+        [style.background-color]="!outlined ? backgroundColor : ''"
+        [style.color]="!outlined ? textColor : backgroundColor"
+        [style.border-color]="outlined ? backgroundColor : ''"
+        (click)="onClick()"
+        [disabled]="disabled">
+  <i [class]="icon" *ngIf="icon"></i> {{ label }}
+</button>

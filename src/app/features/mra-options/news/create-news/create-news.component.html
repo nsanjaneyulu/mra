@@ -1,0 +1,61 @@
+<form [formGroup]="createNewsForm" (ngSubmit)="onSave()">
+  <div class="grid col-12">
+    <div class="xl:col-4 md:col-6 lg:col-4 sm:col-12">
+      <label for="newsType" class="regularFont">News Type <span class="error">*</span></label>
+      <div>
+        <p-dropdown [options]="newsTypes" formControlName="newsType" id="newsType"></p-dropdown>
+        <div *ngIf="isInvalid('newsType')" class="error">News Type is required</div>
+      </div>
+    </div>
+    <div class="xl:col-4 md:col-6 lg:col-4 sm:col-12">
+      <label for="date" class="regularFont">Date <span class="error">*</span></label>
+      <div>
+        <p-calendar id="date" formControlName="date"></p-calendar>
+        <div *ngIf="isInvalid('date')" class="error">Date is required</div>
+      </div>
+    </div>
+    <div class="xl:col-4 md:col-6 lg:col-4 sm:col-12">
+      <label for="referenceNo" class="regularFont">Reference No.</label>
+      <div>
+        <input id="referenceNo" type="text" pInputText formControlName="referenceNo">
+      </div>
+    </div>
+    <div class="xl:col-12 md:col-12 lg:col-12 sm:col-12">
+      <label for="headline" class="regularFont">Headline <span class="error">*</span></label>
+      <div>
+        <input id="headline" type="text" pInputText formControlName="headline">
+        <div *ngIf="isInvalid('headline')" class="error">Headline is required</div>
+      </div>
+    </div>
+    <div class="xl:col-4 md:col-6 lg:col-4 sm:col-12">
+      <label for="category" class="regularFont">Category <span class="error">*</span></label>
+      <div>
+        <p-dropdown [options]="categories" formControlName="category" id="category"></p-dropdown>
+        <div *ngIf="isInvalid('category')" class="error">Category is required</div>
+      </div>
+    </div>
+    <div class="xl:col-4 md:col-6 lg:col-4 sm:col-12">
+      <label for="source" class="regularFont">Source <span class="error">*</span></label>
+      <div>
+        <p-dropdown [options]="sources" formControlName="source" id="source"></p-dropdown>
+        <div *ngIf="isInvalid('source')" class="error">Source is required</div>
+      </div>
+    </div>
+    <div class="xl:col-12 md:col-12 lg:col-12 sm:col-12">
+      <label for="webReference" class="regularFont">Web Reference</label>
+      <div>
+        <input id="webReference" type="text" pInputText formControlName="webReference">
+      </div>
+    </div>
+    <div class="xl:col-12 md:col-12 lg:col-12 sm:col-12">
+      <label for="body" class="regularFont">Body <span class="error">*</span></label>
+      <div>
+        <p-editor formControlName="body" [style]="{ height: '220px' }"></p-editor>
+        <div *ngIf="isInvalid('body')" class="error">Body is required</div>
+      </div>
+    </div>
+    <div class="xl:col-12 md:col-12 lg:col-12 sm:col-12">
+      <button pButton type="submit" label="Save" [disabled]="createNewsForm.invalid"></button>
+    </div>
+  </div>
+</form>

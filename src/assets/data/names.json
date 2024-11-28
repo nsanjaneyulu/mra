@@ -1,0 +1,10 @@
+{
+    "newLetters": [
+      { "platts": "Platts"},
+      { "KallanishStells": "Kallanish Stells"}
+    ],
+    "userManagement": [
+      { "emailId": "E-mail Id"},
+      { "managers": "Managers"}
+    ]
+}

@@ -1,0 +1,56 @@
+.layout-left-container {
+  background: linear-gradient(0deg, #A2D232 -12.15%, #009FDA 21.15%, #002776 71.6%);
+  transition: all .5s;
+
+  .sidebar {
+    transition: all .5s;
+
+    .sidebar-header {
+      .sidebar-pin {
+        transition: all .5s;
+
+        i {
+          background-color: #2f4081;
+          color: white;
+        }
+      }
+    }
+
+    .sidebar-menu {
+      transition: all .5s;
+
+      .esa-menu {
+        transition: all 1s;
+
+        .esa-menu-link {
+          transition: all .2s;
+
+          &>* {
+            cursor: pointer;
+            transition: all .5s;
+          }
+
+          label.esa-menu-text {
+            transition: display 1s;
+          }
+
+          &.active-link {
+            background: #A2D232 !important;
+
+            label.esa-menu-text {
+              color: #002776 !important;
+            }
+          }
+
+          &:not(.active-link):hover {
+            background: #2f4081 !important;
+
+            .grid label.esa-menu-text {
+              color: white !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,193 @@
+.esa-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  &.esa-icon-70 {
+    width: 70px;
+    height: 70px;
+  }
+
+  &.esa-icon-24 {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.esa-icon-16 {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.esa-icon-20 {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.esa-icon-logout {
+    content: url("../../icons/icon_logout.svg");
+  }
+
+  &.esa-icon-trash {
+    content: url("~/assets/icons/icon_trash.svg");
+  }
+
+  &.esa-icon-home {
+    content: url("~/assets/icons/icon_home.svg");
+  }
+  &.esa-icon-home-active {
+    content: url("~/assets/icons/icon_home_active.svg");
+  }
+  
+  &.esa-icon-newsletter {
+    content: url("~/assets/icons/newsletters.svg");
+  }
+  &.esa-icon-newsletter-active {
+    content: url("~/assets/icons/newsletters_active.svg");
+  }
+
+  &.esa-icon-reports {
+    content: url("~/assets/icons/icon_reports.svg");
+  }
+  &.esa-icon-reports-active {
+    content: url("~/assets/icons/icon_reports-active.svg");
+  }
+
+  &.esa-icon-predictive-analysis {
+    content: url("~/assets/icons/icon_predictive-analysis.svg");
+  }
+  &.esa-icon-predictive-analysis-active {
+    content: url("~/assets/icons/icon_predictive-analysis-active.svg");
+  }
+  &.esa-icon-tickers {
+    content: url("~/assets/icons/icon_trickers.svg");
+  }
+  &.esa-icon-tickers-active {
+    content: url("~/assets/icons/icon_tickers-active.svg");
+  }
+
+  &.esa-icon-sales-dashboard {
+    content: url("~/assets/icons/icon_sales-dashboard.svg");
+  }
+  &.esa-icon-sales-dashboard-active {
+    content: url("~/assets/icons/icon_sales-dashboard-active.svg");
+  }
+  
+
+  &.esa-icon-terminal-guide {
+    content: url("~/assets/icons/icon_terminal-guide.svg");
+  }
+  &.esa-icon-terminal-guide-active {
+    content: url("~/assets/icons/icon_terminal-guide-active.svg");
+  }
+
+  &.esa-icon-sales-contact {
+    content: url("~/assets/icons/icon_contact.svg");
+  }
+  &.esa-icon-sales-contact-active {
+    content: url("~/assets/icons/icon_contact-active.svg");
+  }
+
+  &.esa-icon-sales-contact {
+    content: url("~/assets/icons/icon_contact.svg");
+  }
+  &.esa-icon-sales-contact-active {
+    content: url("~/assets/icons/icon_contact-active.svg");
+  }
+  
+  
+
+
+  &.esa-icon-it-admin-options {
+    content: url("~/assets/icons/icon_it_admin-options.svg");
+  }
+  &.esa-icon-it-admin-options-active {
+    content: url("~/assets/icons/icon_it_admin-options-active.svg");
+  }
+
+  &.esa-icon-mra-options {
+    content: url("~/assets/icons/icon_it_admin-options.svg");
+  }
+  &.esa-icon-mra-options-active {
+    content: url("~/assets/icons/icon_it_admin-options-active.svg");
+  }
+
+
+  &.esa-icon-trash {
+    content: url("~/assets/icons/icon_trash.svg");
+  }
+
+  &.esa-icon-downarrow-red {
+    content: url("~/assets/icons/Icon_down_arrow_red.svg");
+  }
+  &.esa-icon-downarrow-blue {
+    content: url("~/assets/icons/icon_down_arrow_blue.svg");
+  }
+  &.esa-icon-up-arrow-green {
+    content: url("~/assets/icons/icon_up_arrow_green.svg");
+  }
+  &.esa-icon-bullet-orange {
+    content: url("~/assets/icons/icon_bullet_orange.svg");
+  }
+  
+
+  // &.esa-icon-bookappointment {
+  //   content: url("~/assets/icons/icon_book_appointment.svg");
+  // }
+
+  // &.esa-icon-todaysappointment {
+  //   content: url("~/assets/icons/icon_todays_appointment.svg");
+  // }
+
+  // &.esa-icon-dataanalytics {
+  //   content: url("~/assets/icons/icon_dataanalytics.svg");
+  // }
+
+  // &.esa-icon-riskassessment {
+  //   content: url("~/assets/icons/icon_riskassessment.svg");
+  // }
+
+  // &.esa-icon-demographics {
+  //   content: url("~/assets/icons/icon_demographics.svg");
+  // }
+
+  // &.esa-icon-schedules {
+  //   content: url("~/assets/icons/icon_schedules.svg");
+  // }
+
+  &.esa-icon-usermanagement {
+    content: url("~/assets/icons/icon_user_management.svg");
+  }
+
+  
+
+  &.esa-icon-bookappointment-active {
+    content: url("~/assets/icons/icon_book_appointment_active.svg");
+  }
+
+  &.esa-icon-todaysappointment-active {
+    content: url("~/assets/icons/icon_todays_appointment_active.svg");
+  }
+
+  &.esa-icon-dataanalytics-active {
+    content: url("~/assets/icons/icon_dataanalytics_active.svg");
+  }
+
+  &.esa-icon-riskassessment-active {
+    content: url("~/assets/icons/icon_riskassessment_active.svg");
+  }
+
+  &.esa-icon-demographics-active {
+    content: url("~/assets/icons/icon_demographics_active.svg");
+  }
+
+  &.esa-icon-schedules-active {
+    content: url("~/assets/icons/icon_schedules_active.svg");
+  }
+
+  &.esa-icon-usermanagement-active {
+    content: url("~/assets/icons/icon_user_management_active.svg");
+  }
+
+  &.esa-icon-menu {
+    content: url("~/assets/icons/icon_menu.svg");
+  }
+}

@@ -1,0 +1,11 @@
+<p-card (click)="handleClick()" class="mouseCursor">
+    <div class="card-desc">
+        <div>
+            <div class="title-color tile">{{ title }}</div>
+            <div class="title-color subTitle" *ngIf="showSubTitle">{{ subTitle }}</div>
+        </div>
+        <div>
+            <div class="arrow-margin"><i class="pi pi-arrow-circle-right pi-arrow-" style="font-size: 2rem"></i></div>
+        </div>
+    </div>
+</p-card>
